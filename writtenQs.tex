@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{graphicx}
+\usepackage{amsmath}
 \graphicspath{ {./images/} }
 \title{Modelling with Graphs Summative }
 \begin{document}
@@ -15,8 +16,23 @@ Edges = classes with at least one shared student (eg. "Amy" in $C_1$ and $C_5$)
 \newline
 Colour = A timeslot
 \newline
+A representation of the graph as an adjacency matrix is:
+\newline
 \begin{center}
+$\begin{pmatrix}
+   0&1&1&0&0&1&0\\
+   1&0&1&0&0&1&1\\
+   1&1&0&0&0&1&0\\
+   0&0&0&0&1&1&0\\
+   0&0&0&1&0&0&1\\
+   1&1&1&1&0&0&0\\
+   0&1&0&0&1&0&0\\
+\end{pmatrix}$
+\newline
+\end{center}
 An example graph would be:
+\newline
+\begin{center}
 \includegraphics{a31NC}
 \newline
 \end{center}
