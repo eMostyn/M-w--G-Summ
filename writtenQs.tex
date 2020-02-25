@@ -20,15 +20,14 @@ A representation of the graph as an adjacency matrix is:
 \newline
 \begin{center}
 $\begin{pmatrix}
-   0&1&1&0&0&1&0\\
+   0&1&1&0&1&1&0\\
    1&0&1&0&0&1&1\\
    1&1&0&0&0&1&0\\
    0&0&0&0&1&1&0\\
-   0&0&0&1&0&0&1\\
-   1&1&1&1&0&0&0\\
+   1&0&0&1&0&1&1\\
+   1&1&1&1&1&0&0\\
    0&1&0&0&1&0&0\\
 \end{pmatrix}$
-\newline
 \end{center}
 An example graph would be:
 \newline
@@ -44,4 +43,74 @@ An example colouring of the above graph would be:
 \begin{center}
 \includegraphics{a31C}
 \end{center}
+\subsection*{A.3.2}
+As there are currently no visited nodes, the algorithm will first visit node $C_1$.
+\begin{center}
+Visited - $C_1$
+\newline
+Adjacent - $C_2,C_3,C_5,C_6$
+\newline
+\end{center}
+Visit $C_2$
+\begin{center}
+Visited - $C_1,C_2$
+\newline
+Adjacent - $C_3,C_5,C_6,C_7$
+\newline
+\end{center}
+Visit $C_3$
+\begin{center}
+Visited - $C_1,C_2,C_3$
+\newline
+Adjacent - $C_5,C_6,C_7$
+\newline
+\end{center}
+Visit $C_6$
+\begin{center}
+Visited - $C_1,C_2,C_3,C_6$
+\newline
+Adjacent - $C_5,C_7$
+\end{center}
+Visit $C_4$
+\begin{center}
+Visited - $C_1,C_2,C_3,C_6,C_4$
+\newline
+Adjacent - $C_5,C_7$
+\end{center}
+Visit $C_5$
+\begin{center}
+Visited - $C_1,C_2,C_3,C_6,C_4,C_5$
+\newline
+Adjacent - $C_7$
+\newline
+\end{center}
+Visit $C_7$
+\begin{center}
+Visited - $C_1,C_2,C_3,C_6,C_4,C_5,C_7$
+\newline
+\end{center}
+Order in which the algorithm visits the vertices to find a proper colouring is:
+\newline
+\begin{center}
+$C_1,C_2,C_3,C_6,C_4,C_5,C_7$
+\end{center}
+\subsection*{A.3.3}
+The colours the algorithm assigns to each vertex are below:
+\begin{center}
+\begin{tabular}{ |c|c| }
+\hline
+Vertex & Colour \\
+\hline
+$C_1$  & 1      \\
+$C_2$  & 2      \\
+$C_3$  & 3      \\
+$C_4$  & 1      \\
+$C_5$  & 2      \\
+$C_6$  & 4      \\
+$C_7$  & 1       \\
+\hline
+\end{tabular}
+\end{center}
+\subsection*{A.3.4}
+The chromatic number of G, $\chi$G, is 4 because it the minimum number of colours needed to properly colour G is 4.
 \end{document}
