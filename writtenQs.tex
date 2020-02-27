@@ -1,6 +1,8 @@
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{calc,shapes.multipart,chains,arrows}
 \graphicspath{ {./images/} }
 \title{Modelling with Graphs Summative }
 \begin{document}
@@ -113,4 +115,127 @@ $C_7$  & 1       \\
 \end{center}
 \subsection*{A.3.4}
 The chromatic number of G, $\chi$G, is 4 because it the minimum number of colours needed to properly colour G is 4.
+
+\section*{B.2}
+\subsection*{B.2.1}
+The adjacency matrix for the graph is below:
+\newline
+\begin{center}
+$\begin{pmatrix}
+   0&1&1&1&1&0&0 \\
+   1&0&0&0&0&1&1 \\
+   1&0&0&0&0&0&1 \\
+   1&0&0&0&0&0&1 \\
+   1&0&0&0&0&1&0 \\
+   0&1&0&0&1&0&0 \\
+   0&1&1&1&0&0&0 \\
+\end{pmatrix}$
+\end{center}
+And the adjacency linked list is below:
+\newline
+1:
+\begin{tikzpicture}[list/.style={rectangle split, rectangle split parts=2,
+    draw, rectangle split horizontal}, >=stealth, start chain]
+    \node[list,on chain] (A) {1};
+  \node[list,on chain] (B) {2};
+  \node[list,on chain] (C) {3};
+ \node[list,on chain] (D) {4};
+ \node[list,on chain] (E) {5};
+  \node[on chain,draw,inner sep=6pt] (F) {};
+  \draw (F.north east) -- (F.south west);
+  \draw (F.north west) -- (F.south east);
+  \draw[*->] let \p1 = (A.two), \p2 = (A.center) in (\x1,\y2) -- (B);
+  \draw[*->] let \p1 = (B.two), \p2 = (B.center) in (\x1,\y2) -- (C);
+  \draw[*->] let \p1 = (C.two), \p2 = (C.center) in (\x1,\y2) -- (D);
+\draw[*->] let \p1 = (D.two), \p2 = (D.center) in (\x1,\y2) -- (E);
+\draw[*->] let \p1 = (E.two), \p2 = (E.center) in (\x1,\y2) -- (F);
+\end{tikzpicture}
+\newline
+2:
+\begin{tikzpicture}[list/.style={rectangle split, rectangle split parts=2,
+    draw, rectangle split horizontal}, >=stealth, start chain]
+   \node[list,on chain] (A) {2};
+  \node[list,on chain] (B) {1};
+  \node[list,on chain] (C) {6};
+ \node[list,on chain] (D) {7};
+  \node[on chain,draw,inner sep=6pt] (E) {};
+  \draw (E.north east) -- (E.south west);
+  \draw (E.north west) -- (E.south east);
+  \draw[*->] let \p1 = (A.two), \p2 = (A.center) in (\x1,\y2) -- (B);
+  \draw[*->] let \p1 = (B.two), \p2 = (B.center) in (\x1,\y2) -- (C);
+  \draw[*->] let \p1 = (C.two), \p2 = (C.center) in (\x1,\y2) -- (D);
+\draw[*->] let \p1 = (D.two), \p2 = (D.center) in (\x1,\y2) -- (E);
+\end{tikzpicture}
+\newline
+3:
+\begin{tikzpicture}[list/.style={rectangle split, rectangle split parts=2,
+    draw, rectangle split horizontal}, >=stealth, start chain]
+   \node[list,on chain] (A) {3};
+  \node[list,on chain] (B) {1};
+	\node[list,on chain] (C) {7};
+  \node[on chain,draw,inner sep=6pt] (D) {};
+  \draw (D.north east) -- (D.south west);
+  \draw (D.north west) -- (D.south east);
+  \draw[*->] let \p1 = (A.two), \p2 = (A.center) in (\x1,\y2) -- (B);
+  \draw[*->] let \p1 = (B.two), \p2 = (B.center) in (\x1,\y2) -- (C);
+  \draw[*->] let \p1 = (C.two), \p2 = (C.center) in (\x1,\y2) -- (D);
+\end{tikzpicture}
+\newline
+4:
+\begin{tikzpicture}[list/.style={rectangle split, rectangle split parts=2,
+    draw, rectangle split horizontal}, >=stealth, start chain]
+   \node[list,on chain] (A) {4};
+  \node[list,on chain] (B) {1};
+	\node[list,on chain] (C) {7};
+  \node[on chain,draw,inner sep=6pt] (D) {};
+  \draw (D.north east) -- (D.south west);
+  \draw (D.north west) -- (D.south east);
+  \draw[*->] let \p1 = (A.two), \p2 = (A.center) in (\x1,\y2) -- (B);
+  \draw[*->] let \p1 = (B.two), \p2 = (B.center) in (\x1,\y2) -- (C);
+  \draw[*->] let \p1 = (C.two), \p2 = (C.center) in (\x1,\y2) -- (D);
+\end{tikzpicture}
+\newline
+5:
+\begin{tikzpicture}[list/.style={rectangle split, rectangle split parts=2,
+    draw, rectangle split horizontal}, >=stealth, start chain]
+   \node[list,on chain] (A) {5};
+  \node[list,on chain] (B) {1};
+	\node[list,on chain] (C) {6};
+  \node[on chain,draw,inner sep=6pt] (D) {};
+  \draw (D.north east) -- (D.south west);
+  \draw (D.north west) -- (D.south east);
+  \draw[*->] let \p1 = (A.two), \p2 = (A.center) in (\x1,\y2) -- (B);
+  \draw[*->] let \p1 = (B.two), \p2 = (B.center) in (\x1,\y2) -- (C);
+  \draw[*->] let \p1 = (C.two), \p2 = (C.center) in (\x1,\y2) -- (D);
+\end{tikzpicture}
+\newline
+6:
+\begin{tikzpicture}[list/.style={rectangle split, rectangle split parts=2,
+    draw, rectangle split horizontal}, >=stealth, start chain]
+   \node[list,on chain] (A) {6};
+  \node[list,on chain] (B) {2};
+	\node[list,on chain] (C) {5};
+  \node[on chain,draw,inner sep=6pt] (D) {};
+  \draw (D.north east) -- (D.south west);
+  \draw (D.north west) -- (D.south east);
+  \draw[*->] let \p1 = (A.two), \p2 = (A.center) in (\x1,\y2) -- (B);
+  \draw[*->] let \p1 = (B.two), \p2 = (B.center) in (\x1,\y2) -- (C);
+  \draw[*->] let \p1 = (C.two), \p2 = (C.center) in (\x1,\y2) -- (D);
+\end{tikzpicture}
+\newline
+7:
+\begin{tikzpicture}[list/.style={rectangle split, rectangle split parts=2,
+    draw, rectangle split horizontal}, >=stealth, start chain]
+   \node[list,on chain] (A) {7};
+  \node[list,on chain] (B) {2};
+  \node[list,on chain] (C) {3};
+ \node[list,on chain] (D) {4};
+  \node[on chain,draw,inner sep=6pt] (E) {};
+  \draw (E.north east) -- (E.south west);
+  \draw (E.north west) -- (E.south east);
+  \draw[*->] let \p1 = (A.two), \p2 = (A.center) in (\x1,\y2) -- (B);
+  \draw[*->] let \p1 = (B.two), \p2 = (B.center) in (\x1,\y2) -- (C);
+  \draw[*->] let \p1 = (C.two), \p2 = (C.center) in (\x1,\y2) -- (D);
+\draw[*->] let \p1 = (D.two), \p2 = (D.center) in (\x1,\y2) -- (E);
+\end{tikzpicture}
 \end{document}

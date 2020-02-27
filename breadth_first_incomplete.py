@@ -11,9 +11,9 @@ def bfs(G,a,b):
     i = 0
     while G.nodes[b]['label'] == -1:
         for u in G.nodes:
-            print(G.nodes)
             if( G.nodes[u]['label'] == i):
-                for v in G.nodes[u]:
+                for v in G[u]:
+                    
                     if(G.nodes[v]['label'] == -1):
                         G.nodes[v]['label'] = i+1
         i=i+1
