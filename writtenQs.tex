@@ -2,6 +2,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{tikz}
+\usepackage{qtree}
 \usetikzlibrary{calc,shapes.multipart,chains,arrows}
 \graphicspath{ {./images/} }
 \title{Modelling with Graphs Summative }
@@ -238,4 +239,71 @@ And the adjacency linked list is below:
   \draw[*->] let \p1 = (C.two), \p2 = (C.center) in (\x1,\y2) -- (D);
 \draw[*->] let \p1 = (D.two), \p2 = (D.center) in (\x1,\y2) -- (E);
 \end{tikzpicture}
+\subsection*{B.2.2}
+The depth-first search tree for the graph in question B.2.1 is below:
+\begin{center}
+\includegraphics{dfsTree}
+\end{center}
+The table for when the in which the vertices are reached for the first time and he order in which the vertices become dead ends is below:
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c|c|}
+\hline
+-&1&2&3&4&5&6&7     \\
+\hline
+On&1&2&6&7&4&3&5   \\
+Off&7&6&3&4&1&2&5	 \\
+\hline
+\end{tabular}
+\end{center}
+\subsection*{2.3}
+The graph with the addition of the weights is below:
+\newline
+\begin{center}
+\includegraphics{b23W}
+\end{center}
+As Kruskal's algorithm runs it firsts adds the edge with the smallest weight to the tree, which is the edge between vertices '1' and '2' with weight 2. 
+\newline
+\begin{center}
+\includegraphics{b231}
+\end{center}
+Secondly, it adds the edge between '1' and '3' with weight 3.
+\newline
+\begin{center}
+\includegraphics{b232}
+\end{center}
+Then, the algorithm will add the next smallest edge, the edge between '1' and '4' with weight 4.
+\newline
+\begin{center}
+\includegraphics{b233}
+\end{center}
+The next edge added is the node between '1' and '5' with weight 5.
+\newline
+\begin{center}
+\includegraphics{b234}
+\end{center}
+Then, the algorithm will add the edge between '2' and '6' with weight 12.
+\newline
+\begin{center}
+\includegraphics{b235}
+\end{center}
+The algorithm then finds the next smallest edge, the edge between '2' and '7' with weight 14 and adds it.
+\newline
+\begin{center}
+\includegraphics{b236}
+\end{center}
+The algorithm then looks at the next smallest edge, which is the edge between '3' and '7' which has a weight of 21. However this will not be added as it would create a cycle, '1,2,7,3,1'. 
+\newline
+\begin{center}
+\includegraphics{b23c1}
+\end{center}
+Finally the algorithm looks at the edge between '5' and '6' which has a weight of 30. However this is not added as it would create a cycle, '1,2,6,5,1'.
+\newline
+\begin{center}
+\includegraphics{b23c2}
+\end{center}
+So the final order minimum spanning tree is:
+\begin{center}
+\includegraphics{b236}
+\end{center}
+With total weight (cost) is 40.
 \end{document}
